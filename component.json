@@ -1,0 +1,77 @@
+{
+    "title": "Wayback",
+    "description": "API for Internet Archive's Wayback Machine",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/archive.org/wayback/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.archive.org/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_wayback_v1_available": {
+            "main": "./lib/actions/get_wayback_v1_available.js",
+            "title": "get_wayback_v1_available",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_wayback_v1_available.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_wayback_v1_available": {
+            "main": "./lib/actions/post_wayback_v1_available.js",
+            "title": "post_wayback_v1_available",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/csv": "text/csv",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_wayback_v1_available.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
