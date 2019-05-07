@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) Wayback MSP Connector
+# ![LOGO](logo.png) Wayback **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the Wayback API (version 1.0.0).
+A generated **flow**ground connector for the Wayback API (version 1.0.0).
 
 Generated from: https://api.apis.guru/v2/specs/archive.org/wayback/1.0.0/swagger.json<br/>
-Generated at: 2019-05-07T11:17:13+03:00
+Generated at: 2019-05-07T17:36:56+03:00
 
 ## API Description
 
@@ -67,7 +67,7 @@ This API does not require authorization.
 
 ## License
 
-flowground :- Telekom iPaaS / archive-org-wayback-connector<br/>
+**flow**ground :- Telekom iPaaS / archive-org-wayback-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
